@@ -1,5 +1,5 @@
 <template>
-  <div id="login" class="text-center">
+  <!-- <div id="login" class="text-center">
     <icon-image id="login-image"/>
     <form class="form-signin" @submit.prevent="login">
       <h1>ClicknShare</h1>
@@ -34,22 +34,23 @@
         required
       />
       
-      <button type="submit"  class="badge rounded-pill bg-info">Log In</button><!--added bootstrap-->
+      <button type="submit"  class="badge rounded-pill bg-info">Log In</button>
     </form>
     <div id="register-user">
       <label>Need an account? <router-link :to="{ name: 'register' }">Sign up</router-link></label>
     </div>
-  </div>
+  </div> -->
+  <v-form>Hello</v-form>
 </template>
 
 <script>
 import authService from "../services/AuthService";
-import IconImage from "../components/IconImage.vue"
+// import IconImage from "../components/IconImage.vue"
 
 export default {
   name: "login",
   components: {
-    IconImage
+    // IconImage
   },
   data() {
     return {
