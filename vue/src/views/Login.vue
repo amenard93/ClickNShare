@@ -1,5 +1,6 @@
 <template>
-  <!-- <div id="login" class="text-center">
+ 
+  <div id="login" class="text-center">
     <icon-image id="login-image"/>
     <form class="form-signin" @submit.prevent="login">
       <h1>ClicknShare</h1>
@@ -34,23 +35,25 @@
         required
       />
       
-      <button type="submit"  class="badge rounded-pill bg-info">Log In</button>
+      <button id="loginButton" type="submit"  class="badge rounded-pill bg-info">Log In</button>
     </form>
     <div id="register-user">
       <label>Need an account? <router-link :to="{ name: 'register' }">Sign up</router-link></label>
     </div>
-  </div> -->
-  <v-form>Hello</v-form>
+  </div>
+ 
+  
+
 </template>
 
 <script>
 import authService from "../services/AuthService";
-// import IconImage from "../components/IconImage.vue"
+ import IconImage from "../components/IconImage.vue"
 
 export default {
   name: "login",
   components: {
-    // IconImage
+     IconImage
   },
   data() {
     return {
@@ -90,14 +93,18 @@ export default {
 
 <style>
 #login {
+  
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "login-image form-signin"
-                       "login-image register-user";                     
+                       "login-image register-user";
+  background: rgb(0,246,255);
+background: linear-gradient(0deg, rgba(0,246,255,1) 0%, rgba(46,107,152,0.9814385150812065) 33%, rgba(0,212,255,1) 100%);
 }
 
 .form-signin {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: grid;
   grid-area: form-signin;
   border: 1px solid black;
@@ -111,9 +118,11 @@ export default {
   padding-bottom: 20px;
   background-color: aliceblue;
   justify-items: center;
+  
 }
 
 #register-user {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: grid;
   grid-area: register-user;
   border: 1px solid black;
@@ -132,6 +141,7 @@ export default {
 }
 
 #login-image {
+  
   grid-area: login-image;
   margin-top: 75px;
   margin-right: -20%;
@@ -144,12 +154,31 @@ h1 {
   font-weight: 1000;
   font-style: italic;
   margin-bottom: 0%; 
+  
 }
 
 h2 {
   font-family: "Billabong";
   font-style: italic;
   margin: 0%;
+  
+}
+
+.body {
+  background: rgb(0,246,255);
+background: linear-gradient(0deg, rgba(0,246,255,1) 0%, rgba(46,107,152,0.9814385150812065) 33%, rgba(0,212,255,1) 100%);
+}
+
+#username {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#password {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#loginButton {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 </style>
