@@ -61,6 +61,28 @@ public class FeedController {
         }
         return feeds;
     }
+    @GetMapping(value = "/feed/favorites")
+    public List<Feed> getFavoritesFeed(Principal principal) {
+        List<Post> posts = postDao.listAllFavorites(userDao.findIdByUsername(principal.getName()));
+        List<Feed> feeds = new ArrayList<>();
+        for(Post post:posts){
+            int postId = post.getPost_id();
+            List<String> comments = commentDao.getStringCommentsByPostId(postId);
+            User user = userDao.getUserById(post.getUser_id());
+            Feed feed = new Feed();
+            feed.setUserId(post.getUser_id());
+            feed.setId(post.getPost_id());
+            feed.setDescription(post.getDescription());
+            feed.setLikes(new ArrayList<>());
+            feed.setComments(comments);
+            feed.setPicture(post.getPictureLink());
+            feed.setTimeStamp(post.getTimestamp());
+            feed.setFirstName(user.getFirstName());
+            feed.setLastName(user.getLastName());
+            feeds.add(feed);
+        }
+        return feeds;
+    }
 
     @PreAuthorize("permitAll()")
     @GetMapping(value = "/landing-page")

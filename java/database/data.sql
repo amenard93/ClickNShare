@@ -17,8 +17,8 @@ INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://fin
 INSERT INTO comments (comment, author_id, post_id) VALUES ('wow this is cool' , 3, 1);
 INSERT INTO comments (comment, author_id, post_id) VALUES ('nice hahahahahah wowowowow' , 3, 3);
 INSERT INTO comments (comment, author_id, post_id) VALUES ('wow that looks good gerry !!!!! -love mom', 1, 4);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('art school is rlly paying off huh ????' , 2, 2);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('i hate this picture' , 1, 2);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('kadnaadljakaljklfa' , 2, 2);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('asadauautwerd picture' , 1, 2);
 --2 follows 1
 INSERT INTO following VALUES (2,1);
 INSERT INTO following VALUES (3,1);

@@ -4,29 +4,21 @@
     <h1 id="postdetail-h1">
       <Header></Header>
     </h1>
-    <div
-        style="
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          padding-bottom: 150px;
-          padding-top: 120px;
-          padding-left: 170px;
-          padding-right: 170px;
-          border-color: black;
-          margin: 10px;
-          background-color: cadetblue;
-          
-        " 
+    <div  class="singleImg"
+       >
+      <img class="singlepostimage" :src="$store.state.currentImage.picture" alt="none" />
+    </div>
+    <div class="bottomHalf"
+        
         
       >
         <section class="singlepost" >
-          <img class="singlepostimage" :src="$store.state.currentImage.picture" alt="none" />
+         
 
           <div class="right-side-of-box">
-            <p class="author">
+            <a class="author"   href="userprofile" @click.prevent="userprofile(currentImage.userId)">
               {{$store.state.currentImage.firstName + " " + $store.state.currentImage.lastName}}
-            </p>
+            </a>
 
             <p class="description">
               {{ $store.state.currentImage.description }}
@@ -46,8 +38,10 @@
               {{ $store.state.currentImage.likes.length }} Likes
             </p>
 
-            <p class="comments" v-for="c in $store.state.currentImage.comments" v-bind:key="c.id">
-              {{ $store.state.currentImage.comments[i] }}
+            <p class="comments" v-for="c in $store.state.currentImage.comments.length" v-bind:key="c.id">
+             
+              {{ $store.state.currentImage.comments[c-1] }}
+            
             </p>
             
 
@@ -97,10 +91,14 @@ export default {
         comments: [],
       },
 
+      
+     
+
     };
   },
 
   methods: {
+    
     likeVerifier(p) {
       let liked = false;
       for (let i=0; i<p.likes.length; i++) {
@@ -172,6 +170,9 @@ export default {
         */
       this.$store.commit("SET_PHOTO_LIKES", newImage);
     },
+    userprofile(userId){
+      this.$router.push({name: 'userprofile', params :{userId: userId}});
+    },
 
     addComment(id) {
       if (this.newComment.trim() !== "") {
@@ -227,7 +228,7 @@ export default {
   flex-direction: column;
   align-items: center;
   background: rgb(255, 255, 255);
-
+  
   color: rgb(38, 38, 38);
   font-size: 14px;
   line-height: 18px;
@@ -240,7 +241,7 @@ export default {
   margin-top: 0;
   top: 0;
   z-index: 200;
-  background-color: rgb(230, 230, 230);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   justify-content: space-around;
   font-family:"Billabong";
@@ -304,18 +305,49 @@ section {
 
 .singlepost {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 80vh;
+  grid-template-columns:  1fr;
+  max-height: 80vh;
+  max-width: 80vw;
+    
   
   
 }
 .singlepostimage {
-  height: 75vh;
-  
+  max-height: 80vh;
+  max-width: 80vw;
 }
 .right-side-of-box {
-  display: grid;
-  grid-template-rows: .5fr 1fr .5fr 2fr 2fr 2fr 1fr;
+  display: flex;
+  flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
+}
+.singleImg {
+          display: grid;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+       
+          padding-bottom: 150px;
+          padding-top: 120px;
+          padding-left: 170px;
+          padding-right: 170px;
+          border-color: black;
+          margin: 0px;
+          
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+}
+.bottomHalf{
+position: relative;
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 150px;
+          padding-top: 120px;
+          padding-left: 170px;
+          padding-right: 170px;
+          border-color: black;
+          margin: 0px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
