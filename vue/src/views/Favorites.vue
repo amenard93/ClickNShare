@@ -1,8 +1,8 @@
 <template>
         <div id="user-profile">
-                <h1 id="favorites-header">
-      <Header></Header>
-    </h1>
+            <h1 id="favorites-header">
+                <Header></Header>
+            </h1>
             <home id="posts" v-bind:isFavorites="true"></home>
         </div>
 </template>
