@@ -4,22 +4,7 @@
       <Header></Header>
     </h1>
 
-    <div
-      style="
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding-bottom: 10px;
-        padding-top: 80px;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-color: black;
-        margin: 10px;
-        justify-content: space-evenly;
-        background-color: cadetblue;
-      "
-    >
+    <div class="homebox" >
       <section class="post" v-for="p in filterPosts" v-bind:key="p.id">
         <a class="author" href="userprofile" @click.prevent="userprofile(p.userId)">
           {{ p.firstName + ' ' + p.lastName }}
@@ -276,6 +261,23 @@ export default {
         justify-content: space-evenly;
         background-color: cadetblue;
         
+}
+.homebox {
+  
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+        padding-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-color: black;
+        margin: 10px;
+        justify-content: space-evenly;
+        background-color: cadetblue;
+        
+      
 }
 .home {
   display: flex;
