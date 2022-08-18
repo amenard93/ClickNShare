@@ -57,6 +57,6 @@ export default {
   },
 
   getFavorites(){
-    return axios.get('/post/favorites');
+    return axios.get('/feed/favorites');
   }
 }

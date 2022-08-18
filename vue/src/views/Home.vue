@@ -125,6 +125,8 @@ export default {
       this.$router.push({name: 'userprofile', params :{userId: userId}});
     },
     likeVerifier(p) {
+      if(!this.$store.state.user || !p.likes) return false;
+
       let liked = false;
       for (let i = 0; i < p.likes.length; i++) {
         if (p.likes[i] === this.$store.state.user.id) {
@@ -229,7 +231,8 @@ export default {
     }, 
   computed: {
     currentLikes() {
-      return Number.parseInt(this.$store.images.likes);
+      return 0;
+      // return Number.parseInt(this.$store.images.likes);
     },
     filterPosts(){
       if(this.userId_filter!=null){
