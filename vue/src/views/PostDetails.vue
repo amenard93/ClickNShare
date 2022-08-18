@@ -16,6 +16,7 @@
           border-color: black;
           margin: 10px;
           background-color: cadetblue;
+          
         " 
         
       >
@@ -310,6 +311,7 @@ section {
 }
 .singlepostimage {
   height: 75vh;
+  
 }
 .right-side-of-box {
   display: grid;

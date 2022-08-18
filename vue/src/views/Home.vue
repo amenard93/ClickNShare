@@ -286,6 +286,7 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: cadetblue;  
+  
 }
 
 
@@ -297,6 +298,7 @@ h1 {
   background-color: aliceblue;
   width: 100%;
   justify-content: space-around;
+  
 }
 
 
@@ -313,6 +315,7 @@ section {
   text-align: left;
   max-height: 800px;
   max-width: 800px;
+  
  }
 
 .author {
@@ -324,6 +327,7 @@ section {
   margin-bottom: 0px;
   line-height: 30px;
   width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .addCom {
@@ -332,6 +336,7 @@ section {
   border-radius: 5px;
   margin-top: 0px;
   margin-bottom: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .addComment {
@@ -339,16 +344,19 @@ section {
   border: 1px solid lightgray;
   color: purple;
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-like {
   color: green;
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-unlike {
   color: red;
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .comments {
@@ -358,6 +366,8 @@ section {
   margin-bottom: 5px;
   min-height: 20px;
   max-height: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 .description {
@@ -367,11 +377,15 @@ section {
   margin-top: 0px;
   margin-bottom: 0px;
   line-height: 40px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 #commentb {
   width: 20%;
-  height:150%
+  height:150%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 #home-header {
@@ -380,11 +394,18 @@ font-family:"Billabong";
 
 #select-post{
   margin-top: 20px;
+  
+}
+
+#select-post > input {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 img {
   max-height: 500px;
   max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 .badge {
@@ -393,8 +414,12 @@ img {
 
 #addToFavb {
   width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.post  {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 </style>

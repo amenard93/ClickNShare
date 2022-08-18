@@ -1,16 +1,19 @@
 <template>
         <div id="user-profile">
             <div id="profile-pic" v-if="item.imageUrl">
-                <img :src="item.imageUrl"/>
+                <img  :src="item.imageUrl"/>
             </div>
-            <div id="profile-pic" v-else-if="user.profileImage">
+            <div id="profile-pic"  v-else-if="user.profileImage">
                 <img :src="user.profileImage"/>
             </div>
             <div id="profile-pic" v-else>
                 <img src="../../public/default_profile_picture.jpeg"/>
             </div>
-            <label id="upload-label" v-if="user.id===$store.state.user.id">Upload Profile Picture</label>
-            <input id="upload-dp" v-if="user.id===$store.state.user.id" ref="imagefile" type="file" accept="image/*" @change="preview"/>
+            <div id="upload">
+                
+                <input id="upload-dp" v-if="user.id===$store.state.user.id" ref="imagefile" type="file" accept="image/*" @change="preview"/>
+                <label id="upload-label" v-if="user.id===$store.state.user.id"></label>
+           </div>
             <div id="dp-buttons" v-if="item.imageUrl">
                 <button id="postpicture" class="badge bg-info" v-on:click.prevent="postPicture">Post</button><!--to .prevent default function of click-->
                 <button id="cancelpost" class="badge bg-secondary" v-on:click.prevent="reset">Cancel</button>
@@ -20,17 +23,18 @@
                 </div> 
             </div>
             <div id="user-detail">
-                <div>User Id : {{user.id}}</div>
+                
                 <div>Username : {{user.username}}</div>
                 <div>First Name : {{user.firstName}}</div>
                 <div>Last Name : {{user.lastName}}</div>
                 <div>email : {{user.email}}</div>
-                <div>{{user.firstName}} {{user.lastName}}'s Posts:</div>
+                <div id="post-section-header">{{user.firstName}} {{user.lastName}}'s Posts:</div>
             </div>
             <div id="remove-post" v-if="user.id===$store.state.user.id">
                 <button @click.prevent="deletePosts">Delete Selected Posts</button>
+                <home id="posts" v-bind:userId_filter="userId"></home>
             </div>
-            <home id="posts" v-bind:userId_filter="userId"></home>
+            
         </div>
 </template>
 
@@ -50,6 +54,7 @@ export default {
             user: {
                 id: null,
                 email: null,
+                username: null,
                 firstName: null,
                 lastName: null,
                 profileImage: null,
@@ -70,6 +75,7 @@ export default {
             const data = response.data;
             this.user.id = data.id;
             this.user.email = data.email;
+            this.user.username = data.username;
             this.user.firstName = data.firstName;
             this.user.lastName = data.lastName;
             this.user.profileImage = data.profileImage;
@@ -116,27 +122,33 @@ export default {
 <style>
 #user-profile{
     display: grid;
+    grid-template-rows: fr 1fr 1fr 1fr 2fr;
     grid-template-areas: "profile-pic user-detail"
-                         "upload-label user-detail"
-                         "upload-dp user-detail"
-                         "dp-buttons user-detail"
+                         "upload-label upload-label"
+                         "upload-dp upload-dp"
+                         "dp-buttons dp-buttons"
                          "posts posts";
+                         
 }
 #profile-pic {
     margin-top: 10%;
     margin-left: 15%;
     grid-area: profile-pic;
     align-self: center;
+    
 }
 #user-detail {
     grid-area: user-detail;
     align-self: center;
+    font-family:"Billabong";
+    font-size: 50px;
+    
 }
 #posts {
     grid-area: posts;
 }
 #upload-dp{
-    grid-area: upload-dp;
+    grid-area: upload-label;
     margin-left: 25%;
     align-self: center;
 }
@@ -146,10 +158,39 @@ export default {
     margin-bottom: 10px;
     align-self: center;
 }
+
 #dp-buttons{
-    grid-area: dp-buttons;
+    grid-area: posts;
     margin-left: 30%;
     margin-top: 10px;
     align-self: center;
 }
+
+#profile-pic > img {
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 400px;
+    border-radius: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#remove-post {
+    grid-area:  posts;
+    /* display: flex;
+    align-content: flex-start; */
+}
+#upload {
+    grid-area: upload-label;
+}
+
+#posts {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#post-section-header {
+    
+    align-self: flex-end;
+}
+
+
 </style>
