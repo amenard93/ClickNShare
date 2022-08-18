@@ -1,18 +1,22 @@
 <template>
         <div id="user-profile">
+                <h1 id="home-header">
+      <Header></Header>
+    </h1>
             <home id="posts" v-bind:isFavorites="true"></home>
         </div>
 </template>
 
 <script>
-//import Header from "./Header.vue";
+import Header from "./Header.vue";
 import photoService from "../services/PhotoService.js";
 import Home from "./Home.vue";
 
 export default {
     name: "userprofile",
     components: {
-        Home   
+        Home,
+        Header   
     },
     data() {
         return {
@@ -121,5 +125,17 @@ export default {
     margin-left: 30%;
     margin-top: 10px;
     align-self: center;
+}
+h1 {
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+  z-index: 200;
+  background-color: aliceblue;
+  width: 100%;
+  justify-content: space-around;
+}
+#home-header {
+font-family:"Billabong";
 }
 </style>

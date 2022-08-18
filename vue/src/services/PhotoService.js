@@ -3,7 +3,7 @@ import qs from 'qs';
 export default {
 
   getPhotos() {
-    return axios.get('/post');
+    return axios.get('/feed');//replace it with /feed to get posts from server
   },
 
   getPhotoById(currentPostId) {
@@ -15,7 +15,7 @@ export default {
   },
 
   addComment(commentObj) {
-    return axios.post(`/post/${commentObj.postId}/create`, { params: { comment: commentObj.comment } });
+    return axios.post(`/post/${commentObj.postId}/create`, null, { params: { comment: commentObj.comment } });
   },
 
   addLike(newImage) {

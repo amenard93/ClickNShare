@@ -12,5 +12,5 @@ public interface CommentDao {
 
     List<Comment> getCommentsByPostId(int postId);
 
-
+    List<String> getStringCommentsByPostId(int postId);
 }
