@@ -1,6 +1,6 @@
 <template>
         <div id="user-profile">
-                <h1 id="home-header">
+                <h1 id="favorites-header">
       <Header></Header>
     </h1>
             <home id="posts" v-bind:isFavorites="true"></home>
@@ -126,7 +126,9 @@ export default {
     margin-top: 10px;
     align-self: center;
 }
-h1 {
+
+#favorites-header {
+font-family:"Billabong";
   position: fixed;
   margin-top: 0;
   top: 0;
@@ -134,8 +136,5 @@ h1 {
   background-color: aliceblue;
   width: 100%;
   justify-content: space-around;
-}
-#home-header {
-font-family:"Billabong";
 }
 </style>
