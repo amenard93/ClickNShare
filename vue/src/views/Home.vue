@@ -139,10 +139,10 @@ export default {
       newImage.timeStamp = p.timeStamp;
       newImage.likes = p.likes;
       newImage.comments = p.comments;
-      //newImage.likes.push(p.userId); // should be the current user's id here
+     // newImage.likes.push(p.userId); // should be the current user's id here
       newImage.likes.push(this.$store.state.user.id);
 
-      /*
+      
       photoService
   
         .addLike(newImage)
@@ -153,7 +153,7 @@ export default {
           });
           this.$router.push({ name: "home" });
         });
-        */
+        
       this.$store.commit("SET_PHOTO_LIKES", newImage);
     },
     unLikeThis(p) {
@@ -184,7 +184,7 @@ export default {
           this.$router.push({ name: "home" });
         });
         */
-      this.$store.commit("SET_PHOTO_LIKES", newImage);
+      // this.$store.commit("SET_PHOTO_LIKES", newImage);
     },
 
     addComment(id) {
@@ -218,8 +218,8 @@ export default {
     }, 
   computed: {
     currentLikes() {
-      return 0;
-      // return Number.parseInt(this.$store.images.likes);
+      // return 0;
+      return Number.parseInt(this.$store.state.images.likes);
     },
     filterPosts(){
       if(this.userId_filter!=null){

@@ -1,24 +1,37 @@
 BEGIN TRANSACTION;
 
 INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'fake@test.com', 'John', 'Smith');
-INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 'red@test.com', 'John', 'John');
-INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('user2','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'blue@test.com', 'Smith', 'Smith');
-INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('user3','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'green@test.com', 'Smith', 'John');
-INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('testing','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'fake@gmail.com', 'a', 'b');
+INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 'red@test.com', 'Admin', 'Admin');
+INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('I_Am_A_Cat','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'catsrule@gmail.com', 'Fizz', 'Gig');
+INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('Good_Dog_7','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'urbestfriend@netscape.net', 'Sam', 'Doggo');
+INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('TechHead','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'hacked@gmail.com', 'Xavier', 'Jackson');
+INSERT INTO users (username,password_hash,role, email, first_name, last_name) VALUES ('WanderingNomad','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'NikkiB@gmail.com', 'Nicole', 'Bernier');
 
 
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (1, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_90s_desktop_computer_full_set_10.jpg', 'Got a new PC!', NOW());
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (1, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_logo.jpeg', 'Our Logo!', NOW());
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (2, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_90s-pattern-46.jpg', 'Might wallpaper my living room with this... thoughts??', NOW());
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (3, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Image_from_iOS.jpg', 'Web3 Networking Event', NOW());
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (4, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Untitled-2022-06-08-1411.png', 'Just a snippet from my "How to Host Lucrative Events" E-class. On Sale for just $99 a month!', NOW());
-INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_photo_14598_(1).jpg', 'Wow, nice grass!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_littlewaterfalls.JPG', 'The irony of Iceland and its lush green landscape and waterfalls at the end of a glacier', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (4, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_FirstDay.jpg', 'First day at the new job!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_VR.jpg', 'Finally got my new VR setup!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_volcanodustglacier.JPG', 'Volcanic ash on a glacier', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (3, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Revenge.jpg', 'Plotting my revenge on the hoomans...', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Beach.JPG', 'Black sand beach!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (4, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_CatDog.jpg', 'We get along sometimes', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_stream.JPG', 'A peaceful stream', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_desk.jpg', 'Got my new WFH office setup!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (3, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_WokeUpLikeThis.jpg', 'I woke  up like this', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Orchid.jpg', 'My Orchids are so beautiful!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (4, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Sleepy_Pup.jpg', 'Hoomans bought a new chair just for me!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Lava.JPG', 'A huge valley  filled with lava rock!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (3, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_OhStawp.jpg', 'Oh Stawp it *Blushes*', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Audobon.jpg', 'Hiked to the peak of Mt Audubon in Colorado. Almost 14,000 ft elevation!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (6, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_Volcano.JPG', 'Got to see an active Volcano!', NOW());
+INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://finalprojectco.s3.us-east-2.amazonaws.com/projectimages/6_CrazySky.jpg', 'The sky was crazy tonight!', NOW());
 
-INSERT INTO comments (comment, author_id, post_id) VALUES ('wow this is cool' , 3, 1);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('nice hahahahahah wowowowow' , 3, 3);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('wow that looks good gerry !!!!! -love mom', 1, 4);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('kadnaadljakaljklfa' , 2, 2);
-INSERT INTO comments (comment, author_id, post_id) VALUES ('asadauautwerd picture' , 1, 2);
+
+INSERT INTO comments (comment, author_id, post_id) VALUES ('wow this is cool' , 6, 1);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('So proud of you! My pups all grown up ', 4, 2);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('Sweeet  let me know how it is, been thinking about getting one', 5, 3);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('I know its tempting, but remember.. If you take out the hoomans, then you have to feed yourself...' , 3, 5);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('So pretty!' , 6, 6);
 --2 follows 1
 INSERT INTO following VALUES (2,1);
 INSERT INTO following VALUES (3,1);

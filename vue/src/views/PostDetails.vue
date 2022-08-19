@@ -245,6 +245,8 @@ export default {
   width: 100%;
   justify-content: space-around;
   font-family:"Billabong";
+  background-color: aliceblue;
+
 }
 
 section {
