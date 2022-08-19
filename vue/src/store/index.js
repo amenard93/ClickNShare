@@ -123,7 +123,7 @@ export default new Vuex.Store({
       let photoToUpdate = state.images.findIndex(photo => {
          return photo.id == data.id
       });
-      state.images[photoToUpdate].likes= data.likes;
+      state.images[photoToUpdate].likes= data.likes; 
     
     },
     SET_USER(state, user) {

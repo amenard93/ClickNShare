@@ -234,7 +234,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: "Billabong";
   background-color: aliceblue;
   width: 100%;
-  margin-top: 0%;
+  margin-top: 0;
+  justify-content: space-around;
 }
 
 #upload {
