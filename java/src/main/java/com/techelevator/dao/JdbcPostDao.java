@@ -152,7 +152,7 @@ public class JdbcPostDao implements PostDao {
                 "DELETE FROM posts WHERE post_id = ?; " +
                 "END;";
         for (Integer id : postIds) {
-            jdbcTemplate.update(sql, id, id, id);
+            jdbcTemplate.update(sql, id, id, id, id);
         }
         return true;
     }

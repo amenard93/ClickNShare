@@ -390,14 +390,8 @@ section {
 
 #commentb {
   width: 20%;
-<<<<<<< HEAD
-  height:150%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-=======
   height: 150%;
   margin-top: 2%;
->>>>>>> c2ce6e92d006b55708f4f4b2104eebc4fbbe9d69
 }
 
 #home-header {
@@ -425,21 +419,12 @@ img {
 }
 
 #addToFavb {
-<<<<<<< HEAD
-  width: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.post  {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-=======
   width: 15%;
 }
 
 #addToFavb:hover {
     color:black; 
     background-color: rgb(255, 0, 179); 
->>>>>>> c2ce6e92d006b55708f4f4b2104eebc4fbbe9d69
 }
 
 #like-fav {
