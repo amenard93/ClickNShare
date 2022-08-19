@@ -146,7 +146,8 @@ public class JdbcPostDao implements PostDao {
     public boolean deletePostCollection(int[] postIds) {
 
         String sql = "BEGIN; " +
-                "DELETE FROM comments WHERE post_id = ?; " +
+                "DELETE FROM favorites WHERE post_id = ?; " +
+                "DELETE FROM comments WHERE post_id = ?;" +
                 "DELETE FROM likes WHERE post_id = ?; " +
                 "DELETE FROM posts WHERE post_id = ?; " +
                 "END;";

@@ -18,7 +18,8 @@
         </router-link>-->
         <img :src="p.picture" alt="none"  @click.prevent="postDetails(p)"/>
 
-        <p button>
+       
+        <p button >
           <button
             class="btn btn-like"
             v-on:click="likeThis(p)"
@@ -31,6 +32,7 @@
           </button>
           {{ p.likes.length }} Likes
         </p>
+         
 
         <p class="comments">
           {{ p.comments[1] }}
@@ -40,7 +42,7 @@
           {{ p.comments[0] }}
         </p>
 
-        <p class="addCom">Add Comment</p>
+        <p class="addCom"></p>
 
         <input
           type="addComment"
@@ -49,6 +51,7 @@
           placeholder="add your comment here"
           v-model="newComment"
         />
+        <div id="like-fav">
         <button
           id="commentb"
           class="badge bg-info"
@@ -57,13 +60,14 @@
         >
           Submit
         </button>
-        <button
+         <button
           id="addToFavb"
-          class="badge bg-info"
+          class="far fa-heart btn btn-default"
           v-on:click.prevent="addToFavorite(p.id)"
         >
-          Favorite
         </button>
+        </div>
+        
         <div id="select-post" v-if="userId_filter && userId_filter===$store.state.user.id">
           <input type="checkbox" @change="$store.commit('ADD_POSTS_TO_DELETE', p.id)"/>
         </div>
@@ -200,10 +204,8 @@ export default {
     },
     addToFavorite(postId){
       photoService.addToFavorite(postId).then(response => {
-        alert(response.status);
         if(response.status === 201){
           this.addedToFavorite = true;
-          alert(response.data);
         }
       });
     }
@@ -388,9 +390,14 @@ section {
 
 #commentb {
   width: 20%;
+<<<<<<< HEAD
   height:150%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
+=======
+  height: 150%;
+  margin-top: 2%;
+>>>>>>> c2ce6e92d006b55708f4f4b2104eebc4fbbe9d69
 }
 
 #home-header {
@@ -418,13 +425,25 @@ img {
 }
 
 #addToFavb {
+<<<<<<< HEAD
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .post  {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+=======
+  width: 15%;
 }
 
+#addToFavb:hover {
+    color:black; 
+    background-color: rgb(255, 0, 179); 
+>>>>>>> c2ce6e92d006b55708f4f4b2104eebc4fbbe9d69
+}
 
+#like-fav {
+  display: flex;
+  justify-content: space-between;
+}
 </style>
