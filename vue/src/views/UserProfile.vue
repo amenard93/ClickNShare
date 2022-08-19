@@ -31,7 +31,7 @@
                 <div id="post-section-header">{{user.firstName}} {{user.lastName}}'s Posts:</div>
             </div>
             <div id="remove-post" v-if="user.id===$store.state.user.id">
-                <button @click.prevent="deletePosts">Delete Selected Posts</button>
+                <button id="remove-post-button" @click.prevent="deletePosts">Delete Selected Posts</button>
                 <home id="posts" v-bind:userId_filter="userId"></home>
             </div>
             
@@ -177,9 +177,16 @@ export default {
 
 #remove-post {
     grid-area:  posts;
+    margin-top: 3%;
+
     /* display: flex;
     align-content: flex-start; */
 }
+
+#remove-post-button{
+    margin-left: 80%;
+}
+
 #upload {
     grid-area: upload-label;
 }
@@ -191,6 +198,11 @@ export default {
     
     align-self: flex-end;
 }
-
+#postpicture{
+    margin-left: 12%;
+}
+#cancelpost{
+    margin-left: 12%;
+}
 
 </style>
