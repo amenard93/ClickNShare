@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -46,6 +47,7 @@ public class FeedController {
         for(Post post:posts){
             int postId = post.getPost_id();
             List<String> comments = commentDao.getStringCommentsByPostId(postId);
+            Collections.reverse(comments);
             User user = userDao.getUserById(post.getUser_id());
             Feed feed = new Feed();
             feed.setUserId(post.getUser_id());

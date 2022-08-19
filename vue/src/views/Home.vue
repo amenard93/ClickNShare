@@ -6,10 +6,17 @@
 
     <div class="homebox" >
       <section class="post" v-for="p in filterPosts" v-bind:key="p.id">
+        
+        <div id="upper-button">
         <a class="author" href="userprofile" @click.prevent="userprofile(p.userId)">
           {{ p.firstName + ' ' + p.lastName }}
         </a>
-
+        <div id="select-post" v-if="userId_filter && userId_filter===$store.state.user.id">
+          <input type="checkbox" @change="$store.commit('ADD_POSTS_TO_DELETE', p.id)"/>
+        </div>
+        </div>
+        
+      
         <p class="description">
           {{ p.description }}
         </p>
@@ -68,9 +75,9 @@
         </button>
         </div>
         
-        <div id="select-post" v-if="userId_filter && userId_filter===$store.state.user.id">
+        <!--<div id="select-post" v-if="userId_filter && userId_filter===$store.state.user.id">
           <input type="checkbox" @change="$store.commit('ADD_POSTS_TO_DELETE', p.id)"/>
-        </div>
+        </div>-->
       </section>
     </div>
   </div>
@@ -431,4 +438,10 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
+#upper-button {
+  display: flex;
+  justify-content: space-between;
+}
+
 </style>
