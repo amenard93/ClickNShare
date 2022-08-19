@@ -18,7 +18,8 @@
         </router-link>-->
         <img :src="p.picture" alt="none"  @click.prevent="postDetails(p)"/>
 
-        <p button>
+       
+        <p button >
           <button
             class="btn btn-like"
             v-on:click="likeThis(p)"
@@ -31,6 +32,7 @@
           </button>
           {{ p.likes.length }} Likes
         </p>
+         
 
         <p class="comments">
           {{ p.comments[1] }}
@@ -40,7 +42,7 @@
           {{ p.comments[0] }}
         </p>
 
-        <p class="addCom">Add Comment</p>
+        <p class="addCom"></p>
 
         <input
           type="addComment"
@@ -49,6 +51,7 @@
           placeholder="add your comment here"
           v-model="newComment"
         />
+        <div id="like-fav">
         <button
           id="commentb"
           class="badge bg-info"
@@ -57,13 +60,14 @@
         >
           Submit
         </button>
-        <button
+         <button
           id="addToFavb"
-          class="badge bg-info"
+          class="far fa-heart btn btn-default"
           v-on:click.prevent="addToFavorite(p.id)"
         >
-          Favorite
         </button>
+        </div>
+        
         <div id="select-post" v-if="userId_filter && userId_filter===$store.state.user.id">
           <input type="checkbox" @change="$store.commit('ADD_POSTS_TO_DELETE', p.id)"/>
         </div>
@@ -200,10 +204,8 @@ export default {
     },
     addToFavorite(postId){
       photoService.addToFavorite(postId).then(response => {
-        alert(response.status);
         if(response.status === 201){
           this.addedToFavorite = true;
-          alert(response.data);
         }
       });
     }
@@ -376,7 +378,8 @@ section {
 
 #commentb {
   width: 20%;
-  height:150%
+  height: 150%;
+  margin-top: 2%;
 }
 
 #home-header {
@@ -397,9 +400,16 @@ img {
 }
 
 #addToFavb {
-  width: 50%;
+  width: 15%;
 }
 
+#addToFavb:hover {
+    color:black; 
+    background-color: rgb(255, 0, 179); 
+}
 
-
+#like-fav {
+  display: flex;
+  justify-content: space-between;
+}
 </style>
