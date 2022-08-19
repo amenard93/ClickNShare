@@ -28,6 +28,7 @@ INSERT INTO posts (user_id, s3_link, description, time)  VALUES (5, 'https://fin
 
 
 INSERT INTO comments (comment, author_id, post_id) VALUES ('wow this is cool' , 6, 1);
+INSERT INTO comments (comment, author_id, post_id) VALUES ('Love this pic. Would make a great background!' , 6, 4);
 INSERT INTO comments (comment, author_id, post_id) VALUES ('So proud of you! My pups all grown up ', 4, 2);
 INSERT INTO comments (comment, author_id, post_id) VALUES ('Sweeet  let me know how it is, been thinking about getting one', 5, 3);
 INSERT INTO comments (comment, author_id, post_id) VALUES ('I know its tempting, but remember.. If you take out the hoomans, then you have to feed yourself...' , 3, 5);
